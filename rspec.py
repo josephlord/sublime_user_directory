@@ -1,6 +1,6 @@
 import sublime
 import sublime_plugin
-import os, errno
+import os, errno, subprocess
 import re
 
 def get_twin_path(path):
@@ -123,3 +123,4 @@ class RunTests(sublime_plugin.TextCommand):
     osascript_command += ' "' + command + '"'
     osascript_command += ' "Ruby Tests"'
     os.system(osascript_command)
+    subprocess.Popen("""osascript -e 'tell app "Sublime Text 2" to activate' """, shell=True)
