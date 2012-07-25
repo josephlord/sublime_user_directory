@@ -11,7 +11,7 @@ on execInTerminalTab(_command, _window, _tab)
     activate
     set frontmost of _window to true
     set selected of _tab to true
-    do script "clear" in _tab
+--    do script "echo " & _command in _tab
     do script _command in _tab
   end
 end execInTerminalTab

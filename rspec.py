@@ -3,6 +3,8 @@ import sublime_plugin
 import os, errno, subprocess
 import re
 
+# Copied verbatim from: https://github.com/neilsarkar/sublime_user_directory
+
 def get_twin_path(path):
   spec_file = path.find("/spec/") >= 0
 
@@ -105,7 +107,7 @@ class RunTests(sublime_plugin.TextCommand):
       if os.path.exists(twin_path):
         path = twin_path
       else:
-        return sublime.error_message("You're not in a spec, bro.")
+        return sublime.error_message("You're not in a spec.")
 
     root_path = re.sub("\/spec\/.*", "", path)
 
@@ -115,12 +117,14 @@ class RunTests(sublime_plugin.TextCommand):
       path += ":" + str(line_number)
 
     self.run_in_terminal('cd ' + root_path)
-    self.run_in_terminal('bundle exec rspec ' + path)
+    self.run_in_terminal('time bundle exec rspec ' + path + ' --drb')
+ #   self.run_in_terminal('time rspec ' + path + '--drb --instafail')
 
   def run_in_terminal(self, command):
     osascript_command = 'osascript '
     osascript_command += '"' + sublime.packages_path() + '/User/run_command.applescript"'
     osascript_command += ' "' + command + '"'
-    osascript_command += ' "Ruby Tests"'
+    osascript_command += ' "Sublime Rspec Tests"'
+    print osascript_command
     os.system(osascript_command)
     subprocess.Popen("""osascript -e 'tell app "Sublime Text 2" to activate' """, shell=True)
