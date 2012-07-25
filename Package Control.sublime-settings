@@ -1,17 +1,19 @@
 {
-	"auto_upgrade_last_run": 1340202106,
+	"auto_upgrade_last_run": 1343051238,
 	"installed_packages":
 	[
-		"Alignment",
-		"CoffeeScript",
-		"CTags",
 		"DetectSyntax",
 		"Git",
-		"Jasmine",
-		"LESS",
 		"Package Control",
+		"Rails Related Files",
 		"RSpec",
-		"Sass",
+		"SCSS",
+		"SideBarEnhancements",
+		"SideBarGit",
+		"Simple Rails Navigator",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"Theme - Pseudo OSX",
 		"Theme - Soda"
 	]
 }

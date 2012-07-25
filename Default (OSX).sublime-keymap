@@ -1,40 +1,5 @@
 [
-  // to see output:
-  // sublime.log_commands(True)
-
-
-  // open this keybindings file
-  {
-    "keys": ["super+ctrl+,"],
-    "command": "open_file",
-    "args": {"file": "${packages}/User/Default ($platform).sublime-keymap"}
-  },
-
-  // go to line
-  {
-    "keys": ["super+l"],
-    "command": "show_overlay",
-    "args": {"overlay": "goto", "text": ":"}
-  },
-
-  // copy file name
-  {
-    "keys": ["super+shift+c"],
-    "command": "copy_path_to_clipboard"
-  },
-
-  // ctags
-  {
-    "keys": ["ctrl+]"],
-    "command": "navigate_to_definition"
-  },
-
-  {
-    "keys": ["super+alt+p"],
-    "command": "rebuild_tags"
-  },
-
-  // go to alternate file
+   // go to alternate file
   // super+ctrl+. will show spec and implementation in split view
   {
     "keys": ["ctrl+shift+down"],
@@ -42,80 +7,28 @@
     "args": {"option": "next"}
   },
 
-  // Duplicate selection
-  { "keys": ["ctrl+shift+d"], "command": "duplicate_line" },
-
-  // show in project drawer
-  { "keys": ["ctrl+super+r"], "command": "reveal_in_side_bar"},
-
-  // select coffeescript twin
-  {
-    "keys": ["ctrl+shift+down"],
-    "command": "open_coffee_twin",
-    "context": [ {"key": "selector", "operator": "equal", "operand": "source.coffee"} ]
-  },
-
-  // compile and display coffeescript
-  {
-    "keys": ["super+b"],
-    "command": "compile_and_display_js",
-    "context": [ {"key": "selector", "operator": "equal", "operand": "source.coffee"} ]
-  },
-
-  // close all other tabs
-  {
-    "keys": ["super+alt+w"],
-    "command": "close_other_tabs"
-  },
-
-  // focus on side bar
-  {
-    "keys": ["ctrl+shift+tab"],
-    "command": "focus_side_bar"
-  },
-
-  // focus back in buffer
-  {
-    "keys": ["ctrl+tab"],
-    "command": "focus_group",
-    "args": {"group": 0}
-  },
-
   // run tests
   {
-    "keys": ["super+r"],
+    "keys": ["super+shift+r"],
     "command": "run_tests",
     "args": {"single": false}
   },
 
   {
-    "keys": ["super+shift+r"],
+    "keys": ["super+r"],
     "command": "run_tests",
     "args": {"single": true}
   },
 
-  // go to symbol
-  {
-    "keys": ["super+shift+t"],
-    "command": "show_overlay",
-    "args": {"overlay": "goto", "text": "@"}
-  }
-
-  // make the rspec switch to twin work for lib things
-
-  // markdown preview
-
-  // alignment
-
-  // load script directory
-
-  // make command+shift+d de-select the next match
-
-  // command+alt+down switch between controller and view
-
-  // Run coffeescript spec
-
-  // create new coffeescript file in new directory
-
-  // -G for find in project
+  { "keys": ["ctrl+s"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
+ 
+// Simple Rails Nav
+ { "keys": ["super+ctrl+m"], "command": "list_rails_models" },
+{ "keys": ["super+ctrl+c"], "command": "list_rails_controllers" },
+{ "keys": ["super+ctrl+v"], "command": "list_rails_views" }
+//{ "keys": ["super+ctrl+i"], "command": "list_rails_javascripts" },
+//{ "keys": ["super+ctrl+y"], "command": "list_rails_stylesheets" }
 ]
+
+
+
