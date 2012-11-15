@@ -1,10 +1,11 @@
 {
-	"auto_upgrade_last_run": 1343051238,
+	"auto_upgrade_last_run": 1352971615,
 	"installed_packages":
 	[
 		"DetectSyntax",
 		"Git",
 		"Package Control",
+		"Pretty JSON",
 		"Rails Related Files",
 		"RSpec",
 		"SCSS",
