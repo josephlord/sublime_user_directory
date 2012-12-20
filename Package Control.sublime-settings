@@ -1,8 +1,9 @@
 {
-	"auto_upgrade_last_run": 1352971615,
+	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
 		"DetectSyntax",
+		"ERB Insert and Toggle Commands",
 		"Git",
 		"Package Control",
 		"Pretty JSON",

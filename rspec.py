@@ -1,23 +1,27 @@
 import sublime
 import sublime_plugin
-import os, errno, subprocess
+import os
+import errno
+import subprocess
 import re
 
 # Copied verbatim from: https://github.com/neilsarkar/sublime_user_directory
+
 
 def get_twin_path(path):
   spec_file = path.find("/spec/") >= 0
 
   if spec_file:
     if path.find("/lib/") > 0:
-      return path.replace("/spec/lib/","/lib/").replace("_spec.rb", ".rb")
+      return path.replace("/spec/lib/", "/lib/").replace("_spec.rb", ".rb")
     else:
-      return path.replace("/spec/","/app/").replace("_spec.rb", ".rb")
+      return path.replace("/spec/", "/app/").replace("_spec.rb", ".rb")
   else:
     if path.find("/lib/") > 0:
       return path.replace("/lib/", "/spec/lib/").replace(".rb", "_spec.rb")
     else:
       return path.replace("/app/", "/spec/").replace(".rb", "_spec.rb")
+
 
 class OpenRspecFileCommand(sublime_plugin.WindowCommand):
   def run(self, option):
@@ -29,14 +33,15 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
 
     if os.path.exists(twin_path):
       view = window.open_file(twin_path)
+      self.views.append(view)
     else:
       matches = self.find_twin_candidates(current_file_path)
-      matches.append("Create "+twin_path)
+      matches.append("Create " + twin_path)
 
       def process_selection(option):
-        if( option == matches.__len__() - 1):
+        if(option == matches.__len__() - 1):
           self.create_new_file(twin_path)
-        elif( option == -1):
+        elif(option == -1):
           print "Cancelled dialog"
           # do nothing
         else:
@@ -51,10 +56,11 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
 
     try:
         os.makedirs(dirname)
-    except OSError as exc: # Python >2.5
+    except OSError as exc:  # Python >2.5
         if exc.errno == errno.EEXIST:
             pass
-        else: raise
+        else:
+          raise
 
     twin_file = open(path, "w")
 
@@ -70,7 +76,6 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
 
     view = window.open_file(twin_file)
     self.views.append(view)
-
 
   def find_twin_candidates(self, file_path):
     is_spec = file_path.find("/spec/") > 0
