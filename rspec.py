@@ -122,7 +122,7 @@ class RunTests(sublime_plugin.TextCommand):
       path += ":" + str(line_number)
 
     self.run_in_terminal('cd ' + root_path)
-    self.run_in_terminal('time bundle exec rspec ' + path + ' --drb')
+    self.run_in_terminal('time bundle exec bin/rspec ' + path + ' --drb --format progress')
  #   self.run_in_terminal('time rspec ' + path + '--drb --instafail')
 
   def run_in_terminal(self, command):
