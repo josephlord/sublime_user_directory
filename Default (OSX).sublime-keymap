@@ -1,4 +1,5 @@
 [
+  { "keys": ["alt+m"], "command": "markdown_preview", "args": {"target": "browser", "parser":"github"} },
    // go to alternate file
   // super+ctrl+. will show spec and implementation in split view
   {

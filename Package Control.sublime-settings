@@ -2,9 +2,13 @@
 	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
+		"Coffee Formatter",
 		"DetectSyntax",
 		"ERB Insert and Toggle Commands",
 		"Git",
+		"GitGutter",
+		"Highlight Whitespaces",
+		"Markdown Preview",
 		"Package Control",
 		"Pretty JSON",
 		"Rails Related Files",
