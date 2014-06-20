@@ -29,7 +29,7 @@
     */
     "sublimelinter_executable_map":
     {
-        "ruby": "/Users/josephl/.rvm/rubies/ruby-1.9.3-p327/bin/ruby",
+        "ruby": "/Users/josephl/.rvm/rubies/ruby-2.1.1/bin/ruby",
         "Python Django": "python3"
     },
 
